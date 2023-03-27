@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "04a08f6e-833e-45c8-98cd-0d19368b8e14",
+		"name": "desafio-act",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "contas",
+			"item": [
+				{
+					"name": "add-conta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contaId\": \"1.0\",\r\n    \"contaNome\": \"RECEITAS\",\r\n    \"tipo\": \"CREDITO\",\r\n    \"contaPai\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8050/v1/contas",
+							"host": [
+								"localhost"
+							],
+							"port": "8050",
+							"path": [
+								"v1",
+								"contas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-conta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contaId\": \"1.1\",\r\n    \"contaNome\": \"VENDAS PRODUTO\",\r\n    \"tipo\": \"CREDITO\",\r\n    \"contaPai\": \"1.0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8050/v1/contas/1.0",
+							"host": [
+								"localhost"
+							],
+							"port": "8050",
+							"path": [
+								"v1",
+								"contas",
+								"1.0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail-conta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8050/v1/contas/2.0",
+							"host": [
+								"localhost"
+							],
+							"port": "8050",
+							"path": [
+								"v1",
+								"contas",
+								"2.0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lançamentos",
+			"item": [
+				{
+					"name": "create-lancamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lancamentoId\": \"8\",\r\n    \"lancamentoData\": \"2023-03-25\",\r\n    \"contaId\": \"1.1\",\r\n    \"valor\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8060/v1/lancamentos",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"v1",
+								"lancamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-lancamento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8060/v1/lancamentos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"v1",
+								"lancamentos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report-diario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8060/v1/lancamentos/2023-03-26",
+							"host": [
+								"localhost"
+							],
+							"port": "8060",
+							"path": [
+								"v1",
+								"lancamentos",
+								"2023-03-26"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
